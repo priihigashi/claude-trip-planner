@@ -1,0 +1,13 @@
+/* You Are Here marker, after the city directory boards. */
+.yah{position:relative;width:0;height:0}
+.yah .flag{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);
+  background:#B8332B;color:#FFF6EE;white-space:nowrap;
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.14em;font-weight:500;
+  padding:5px 9px;border-radius:3px;box-shadow:0 3px 10px rgba(0,0,0,.5)}
+.yah .flag::after{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#B8332B}
+.yah .dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:15px;height:15px;border-radius:50%;background:#B8332B;border:3px solid #FFF6EE;
+  box-shadow:0 0 0 5px rgba(184,51,43,.28)}
+.ringlabel{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;
+  color:#2E9179;background:rgba(14,31,46,.85);padding:3px 7px;border-radius:2px;white-space:nowrap}
