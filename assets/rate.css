@@ -1,0 +1,19 @@
+/* Your rating + notes on a logged stop. */
+.rate{margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
+.rate-h{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+.stars-in{display:flex;gap:3px;margin-bottom:9px}
+.stars-in button{cursor:pointer;background:none;border:0;padding:2px 3px;font-size:21px;
+  line-height:1;color:#3B4C5C}
+.stars-in button.on{color:#C08A3E}
+.rate textarea{width:100%;background:transparent;border:1px solid var(--line);color:var(--shell);
+  border-radius:2px;padding:9px 11px;font-family:"Public Sans",sans-serif;font-size:14px;
+  line-height:1.45;resize:vertical;min-height:60px}
+.rate textarea::placeholder{color:#5A6B7A}
+.rate .saved{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--verdigris);margin:6px 0 0;min-height:12px}
+.chip.rated{border-color:#C08A3E;color:#C08A3E}
+.verdict{background:rgba(192,138,62,.14);border-left:2px solid var(--brass);padding:11px 13px;
+  margin:12px 0 0;border-radius:0 3px 3px 0;font-size:14px;color:#5C4415}
+.verdict em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:#8A6B32;display:block;margin-bottom:3px}
