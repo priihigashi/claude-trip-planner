@@ -1,0 +1,14 @@
+/* Facilities layer, open-now status, per-leg distances. */
+.faclbar{display:flex;gap:7px;margin-top:10px}
+.faclbar button{flex:1;cursor:pointer;background:transparent;border:1px solid var(--line);
+  color:var(--muted);border-radius:20px;padding:7px 8px;font-family:"IBM Plex Mono",monospace;
+  font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+.faclbar button[aria-pressed="true"]{background:rgba(122,138,153,.25);border-color:var(--muted);
+  color:var(--shell)}
+.facpin{display:flex;align-items:center;justify-content:center;width:21px;height:21px;
+  border-radius:3px;background:#33506B;color:#DCE6EF;border:1.5px solid #0B1926;font-size:11px;
+  box-shadow:0 2px 5px rgba(0,0,0,.4)}
+.chip.open{border-color:#2E9179;color:#2E9179}
+.chip.soon{border-color:#C08A3E;color:#C08A3E}
+.chip.shut{border-color:#7A4A4A;color:#B08080}
+.chip.leg{border-color:rgba(122,138,153,.4);color:var(--muted)}
