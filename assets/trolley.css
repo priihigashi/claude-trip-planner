@@ -1,0 +1,12 @@
+/* Trolley tab styles. */
+.day-btn.trolley-tab[aria-selected="true"]{background:#D4622A;border-color:#D4622A;color:#150802}
+.stop.trol .knot{background:#D4622A;border-color:#D4622A;color:#150802;font-weight:500}
+.stop.trol .name{font-size:18px}
+.chip.perk{border-color:#D4622A;color:#D4622A}
+.tip{font-size:13.5px;color:var(--shell-2);margin:8px 0 0;padding-left:11px;
+  border-left:2px solid rgba(212,98,42,.55);line-height:1.45}
+.trolhead{border:1px solid rgba(212,98,42,.4);border-radius:3px;padding:14px 15px;margin:0 0 4px;
+  background:rgba(212,98,42,.07)}
+.trolhead h3{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:#D4622A;margin:0 0 7px;font-weight:500}
+.trolhead p{margin:0;font-size:13.5px;color:var(--muted)}
