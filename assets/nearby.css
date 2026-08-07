@@ -1,0 +1,28 @@
+/* Sticky action bar, Nearby now, next-stop highlight, legend on the map. */
+.actionbar{position:fixed;left:0;right:0;bottom:0;z-index:800;display:flex;gap:8px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(14,31,46,.94);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.actionbar button{flex:1;cursor:pointer;background:transparent;border:1px solid var(--line);
+  color:var(--shell);border-radius:3px;padding:12px 6px;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.actionbar button.go{border-color:var(--verdigris);color:var(--verdigris)}
+.actionbar button.wet{border-color:#6AA7E8;color:#6AA7E8}
+.actionbar button.wet.hot{background:#6AA7E8;color:#08182B;font-weight:500}
+body{padding-bottom:132px}
+.maplegend{position:absolute;z-index:500;left:10px;top:10px;background:rgba(14,31,46,.9);
+  border:1px solid var(--line);border-radius:4px;padding:8px 10px;display:block;
+  backdrop-filter:blur(4px);max-width:150px}
+.maplegend span{display:block;margin-bottom:3px}
+.maplegend span:last-child{margin-bottom:0}
+.stop.next .knot{box-shadow:0 0 0 5px rgba(46,145,121,.3)}
+.chip.nextchip{background:var(--verdigris);border-color:var(--verdigris);color:#06170F;font-weight:500}
+.nearbox{border:1px solid rgba(46,145,121,.45);border-radius:3px;padding:15px 16px;margin:12px 0 0;
+  background:rgba(46,145,121,.07)}
+.nearbox h3{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--verdigris);margin:0 0 5px;font-weight:500}
+.nearbox .lead{font-size:13px;color:var(--muted);margin:0 0 10px}
+.nearbox a{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);padding:11px 0 10px}
+.nearbox .nn{font-family:"Fraunces",Georgia,serif;font-size:17px;font-weight:600;margin:0 0 2px}
+.nearbox .nw{font-size:13px;color:var(--muted);margin:0}
+.nearbox .nm{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--verdigris);
+  letter-spacing:.06em;margin-top:5px;display:block}
