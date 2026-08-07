@@ -4,19 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>St. Augustine</title>
-<meta name="description" content="Two days in St. Augustine with young kids \u2014 map, weather, hours, prices and backups.">
+<meta name="description" content="Two days in St. Augustine with young kids \u2014 map, weather, hours, prices and what to order.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0E1F2E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="../assets/trip.css">
+<link rel="stylesheet" href="../assets/food.css">
 </head>
 <body>
 <div class="wrap">
   <header>
     <p class="eyebrow" id="eyebrow"></p>
     <h1 id="wordmark"></h1>
-    <p class="sub">Tap a pin or a stop for hours, price, reviews, photos, backups and directions.</p>
+    <p class="sub">Tap a pin or a stop for hours, price, reviews, what to order, backups and directions.</p>
     <div class="wx" id="wx"><div class="wx-txt">Loading the weather\u2026</div></div>
     <div id="wx-extra"></div>
     <a class="home" href="../">\u2190 All trips</a>
@@ -55,6 +59,7 @@
   <h2 class="s-name" id="s-name"></h2>
   <p class="s-blurb" id="s-blurb"></p>
   <div id="s-flag"></div>
+  <div id="s-food"></div>
   <dl class="facts" id="s-facts"></dl>
   <div id="s-alts"></div>
   <div class="btns" id="s-btns"></div>
@@ -63,6 +68,7 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="./trip-data.js"></script>
+<script src="./food.js"></script>
 <script src="../assets/trip.js"></script>
 </body>
 </html>
