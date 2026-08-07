@@ -1,0 +1,18 @@
+/* Food Intelligence card styles. Loaded after trip.css. */
+.food-box{border:1px solid var(--shell-2);border-radius:4px;padding:14px 15px;margin:0 0 18px;
+  background:rgba(46,145,121,.06)}
+.food-h{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:#1E6B58;margin:0 0 11px}
+.food-role{display:flex;gap:11px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.07);align-items:flex-start}
+.food-role:last-of-type{border-bottom:0}
+.food-role b{flex:0 0 88px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:#1E6B58;font-weight:500;padding-top:2px}
+.food-role span{flex:1;font-size:14px;color:#2A3C4C;line-height:1.45}
+.food-line{font-size:13.5px;color:#33475A;margin:10px 0 0;padding-top:10px;
+  border-top:1px solid rgba(0,0,0,.07)}
+.food-line em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:#8A99A6;display:block;margin-bottom:2px}
+.food-line.warn{color:#8A5A12}
+.food-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.food-meta span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:#5E7080;border:1px solid var(--shell-2);border-radius:2px;padding:4px 8px}
