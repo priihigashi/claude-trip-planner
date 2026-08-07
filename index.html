@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trips</title>
+<meta name="description" content="Family trip guides \u2014 live map, weather, hours and prices, built for phones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Public+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0E1F2E;--shell:#F2EDE3;--verdigris:#2E9179;--brass:#C08A3E;--muted:#7A8A99;
+    --line:rgba(242,237,227,.16)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--shell);
+    font-family:"Public Sans",-apple-system,sans-serif;font-size:16px;line-height:1.5;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:640px;margin:0 auto;padding:32px 18px 60px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--verdigris);margin:0}
+  h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(36px,11vw,56px);
+    line-height:.95;margin:12px 0 8px;letter-spacing:-.02em}
+  h1 em{font-style:italic;color:var(--brass)}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 30px}
+  a.trip{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);
+    padding:22px 0;transition:padding-left .18s}
+  a.trip:last-of-type{border-bottom:1px solid var(--line)}
+  a.trip:hover{padding-left:8px}
+  a.trip:focus{outline:2px solid var(--brass);outline-offset:4px}
+  .when{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--verdigris);margin:0 0 6px}
+  .place{font-family:"Fraunces",Georgia,serif;font-size:26px;font-weight:600;margin:0 0 6px;line-height:1.1}
+  .blurb{color:var(--muted);font-size:14px;margin:0}
+  .arrow{float:right;color:var(--brass);font-family:"IBM Plex Mono",monospace;font-size:13px;margin-top:20px}
+  .note{margin-top:34px;padding:16px 18px;border:1px dashed var(--line);border-radius:3px;
+    color:var(--muted);font-size:13.5px}
+  .note b{color:var(--shell);font-weight:500}
+  code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--verdigris)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Family guides</p>
+  <h1>Trips</h1>
+  <p class="sub">One page per trip. Live map, live weather, hours, prices and backups \u2014 built to be used on a phone while standing on a street corner.</p>
+
+  <a class="trip" href="./st-augustine-2026/">
+    <span class="arrow">Open \u2192</span>
+    <p class="when">7\u20139 Aug 2026</p>
+    <p class="place">St. Augustine</p>
+    <p class="blurb">Fort, pirates, and the oldest street in the country, paced around August heat.</p>
+  </a>
+
+  <p class="note">
+    <b>Adding the next trip.</b> Copy a trip folder, rename it <code>destination-year</code>, replace
+    <code>trip-data.js</code>, and add a card here. The map, filters, weather and popups all read from that
+    one data file \u2014 see <code>README.md</code> for the shape.
+  </p>
+</div>
+</body>
+</html>
