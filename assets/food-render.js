@@ -24,7 +24,9 @@
     if (f.coffee) meta += '<span>Coffee: ' + esc(f.coffee) + '</span>';
     if (f.parking) meta += '<span>Parking: ' + esc(f.parking) + '</span>';
     if (meta) h += '<div class="food-meta">' + meta + '</div>';
-    return h + '</div>';
+    h += '</div>';
+    if (f.verdict) h += '<p class="verdict"><em>Our verdict</em>' + esc(f.verdict) + '</p>';
+    return h;
   }
 
   function sync() {
