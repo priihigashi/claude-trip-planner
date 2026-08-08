@@ -1,0 +1,13 @@
+/* Option 2 block. */
+.opt2{border:1px solid var(--shell-2);border-radius:4px;padding:14px 15px;margin:16px 0 0;
+  background:rgba(46,145,121,.06)}
+.opt2 .h{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:#1E6B58;margin:0 0 9px;font-weight:500}
+.opt2 .dress{font-size:13.5px;color:#33475A;margin:0 0 13px;padding-bottom:12px;
+  border-bottom:1px solid var(--shell-2)}
+.opt2 .dress em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.12em;text-transform:uppercase;color:#8A99A6;display:block;margin-bottom:3px}
+.opt2 a{display:block;text-decoration:none;color:var(--ink)}
+.opt2 .n{font-family:"Fraunces",Georgia,serif;font-size:19px;font-weight:600;margin:0 0 4px}
+.opt2 .w{font-size:14px;color:#33475A;margin:0 0 6px;line-height:1.45}
+.opt2 .m{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#1E6B58;letter-spacing:.06em}
