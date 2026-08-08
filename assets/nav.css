@@ -1,0 +1,26 @@
+/* Consistent way back from every view.
+ *
+ * Problems this fixes:
+ *  - the detail sheet had a Close button only at the very bottom, past a long
+ *    scroll, and nothing at the top
+ *  - the phone back button did nothing while a panel was open
+ *  - Nearby and the indoor list opened but had no obvious way out
+ *  - after tapping a map pin you could end up deep in a panel with no anchor
+ */
+.sheet-top{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;
+  background:var(--shell);padding:8px 0 10px;border-bottom:1px solid var(--shell-2);margin-bottom:12px}
+.sheet-top .grabline{position:absolute;left:50%;top:4px;transform:translateX(-50%);
+  width:38px;height:4px;border-radius:2px;background:var(--shell-2)}
+.sheet-x{cursor:pointer;background:transparent;border:1px solid var(--shell-2);color:var(--ink);
+  border-radius:20px;padding:8px 15px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;margin-left:auto}
+.panel-x{width:100%;margin-top:14px;cursor:pointer;background:transparent;border:1px solid var(--line);
+  color:var(--muted);border-radius:2px;padding:10px;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;letter-spacing:.12em;text-transform:uppercase}
+.tophome{position:sticky;top:0;z-index:700;display:flex;gap:8px;align-items:center;
+  background:rgba(14,31,46,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  padding:9px 18px;margin:0 -18px 10px}
+.tophome a,.tophome button{cursor:pointer;background:transparent;border:1px solid var(--line);
+  color:var(--muted);text-decoration:none;border-radius:20px;padding:7px 13px;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.tophome .now{color:var(--verdigris);border-color:rgba(46,145,121,.5)}
