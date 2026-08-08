@@ -10,11 +10,11 @@
     window.TRIP.days.forEach(function (d) {
       d.stops.forEach(function (s) {
         if (s.name.indexOf('Castillo') > -1) {
-          s.price = '$15 adult \u00b7 15 and under FREE \u00b7 pass good 7 days';
-          s.blurb = 'Confirmed on site: $15 for adults, kids free. Clean restrooms and water ' +
-            'fountains inside, a small indoor room where kids can play, and the grounds outside ' +
-            'are the best part \u2014 sand, sticks, rocks to climb, and room to run. Easily fills ' +
-            'a whole afternoon; we stayed until closing.';
+          s.price = '$15 per adult \u00b7 $30 for two \u00b7 15 and under FREE \u00b7 pass good 7 days';
+          s.blurb = 'Confirmed on site: $15 each for the adults, $30 for the two of us, kids free. ' +
+            'Clean restrooms and water fountains inside, a small indoor room where kids can play, ' +
+            'and the grounds outside are the best part \u2014 sand, sticks, rocks to climb, and room ' +
+            'to run. Easily fills a whole afternoon; we stayed until closing.';
           s.dur = '2\u20133 hr (we stayed until close)';
         }
       });
@@ -35,9 +35,10 @@
       { name: 'St. George Street walk', lat: 29.8962, lng: -81.3133, di: 0, t: D(13, 30),
         note: 'Walked from the top, did not go far before turning around. Shaded, easy with kids.' },
       { name: 'Castillo de San Marcos', lat: 29.8978618, lng: -81.3115187, di: 0, t: D(14, 30),
-        rating: 5, note: '$15 adults, kids free. Stayed until it closed. Clean bathrooms and water ' +
-          'fountains, a small room where the kids could play, and the outdoor area is beautiful \u2014 ' +
-          'they played with sand and sticks and climbed the rocks. Best value of the trip.' },
+        rating: 5, note: '$15 per adult, $30 for the two of us, kids free. Stayed until it closed. ' +
+          'Clean bathrooms and water fountains, a small room where the kids could play, and the ' +
+          'outdoor area is beautiful \u2014 they played with sand and sticks and climbed the rocks. ' +
+          'Best value of the trip.' },
       { name: "Pizzalley's", lat: 29.8942136, lng: -81.3127829, di: 0, t: D(18, 30),
         rating: 5, note: 'Great. Ricotta, pepperoni and hot honey pizza, plus lasagna. Kids shared ' +
           'a cheese pizza and spaghetti, $10 each.' },
