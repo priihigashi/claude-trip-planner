@@ -1,11 +1,8 @@
 /* Rain mode.
  *
- * "It is raining \u2014 where now?" Takes your location, ranks everything indoor
- * by how far you would have to walk in the wet, and warns you off the open-air
- * places. Auto-opens if the live forecast says it is actually raining.
- *
- * Indoor list = itinerary stops flagged below + extra bolt-holes that are not
- * on the plan but are useful when you are caught out.
+ * A toggle, not a one-way door: tapping again closes it, and the panel has its
+ * own dismiss. Auto-flags itself if the live forecast says it is raining, but
+ * never opens anything on its own.
  */
 (function () {
   var INDOOR = {
@@ -20,20 +17,22 @@
     'Plaza', 'Seawall', 'Black Raven', 'Fountain of Youth'];
 
   var EXTRA = [
-    { name: 'Lightner Museum', what: 'Three floors of Gilded Age collections in an old hotel. Kids under 12 free.',
+    { name: 'Lightner Museum', what: 'Three floors of Gilded Age collections. Kids under 12 free.',
       hours: '9:00 AM \u2013 5:00 PM', lat: 29.8909482, lng: -81.3136432,
       q: 'Lightner Museum St Augustine', pid: 'ChIJM47eEpQn5IgRsxOMPGD46qE' },
     { name: 'Villa Zorayda Museum', what: 'Moorish palace, self-guided audio tour, about an hour.',
       hours: '10:00 AM \u2013 5:00 PM', lat: 29.89158, lng: -81.315131,
       q: 'Villa Zorayda Museum St Augustine', pid: 'ChIJ8WFxX5Qn5IgRGlZQmbqM4qM' },
-    { name: 'St. George Street shops', what: 'Awnings the whole way and every shop is air-conditioned. Free.',
+    { name: 'St. George Street shops', what: 'Awnings the whole way, every shop air-conditioned. Free.',
       hours: 'Most shops until 8 or 9', lat: 29.8962, lng: -81.3133,
       q: 'St George Street St Augustine' },
     { name: 'Flagler College lobby', what: 'Free, indoors, Tiffany windows, five minutes.',
       hours: 'Daytime', lat: 29.8909, lng: -81.3145, q: 'Flagler College St Augustine' },
-    { name: 'Whetstone Chocolates', what: 'Factory tour and tasting. Entirely indoors, ends in chocolate.',
+    { name: 'Whetstone Chocolates', what: 'Factory tour and tasting, entirely indoors.',
       hours: 'Check same day', lat: 29.8912, lng: -81.3243, q: 'Whetstone Chocolates St Augustine' }
   ];
+
+  var open = false;
 
   function mi(a, b, c, d) {
     var R = 3958.8, r = function (x) { return x * Math.PI / 180; };
@@ -46,7 +45,6 @@
     for (var i = 0; i < OUTDOOR.length; i++) if (n.indexOf(OUTDOOR[i]) > -1) return true;
     return false;
   }
-
   function candidates() {
     var out = EXTRA.slice();
     if (window.TRIP) window.TRIP.days.forEach(function (d) {
@@ -61,14 +59,28 @@
     return out;
   }
 
+  function label() {
+    var b = document.getElementById('rain-btn');
+    if (!b) return;
+    b.textContent = open ? '\u2715 Close indoor list'
+      : (b.dataset.wet === '1' ? '\u2614 Raining now \u2014 find indoor places'
+                               : '\u2614 Find indoor places');
+  }
+
+  function close() {
+    open = false;
+    document.getElementById('rainbox').innerHTML = '';
+    label();
+  }
+
   function show(pos) {
     var box = document.getElementById('rainbox');
     var list = candidates().map(function (c) {
       c.d = mi(pos.lat, pos.lng, c.lat, c.lng); return c;
     }).sort(function (a, b) { return a.d - b.d; }).slice(0, 4);
 
-    box.innerHTML = '<div class="rainbox"><h3>Raining \u2014 nearest cover</h3>' +
-      '<p class="lead">Ranked by how far you have to walk in the wet. ' +
+    box.innerHTML = '<div class="rainbox"><h3>Nearest cover</h3>' +
+      '<p class="lead">Indoor only, ranked by how far you walk in the wet. ' +
       'Afternoon storms here usually pass in 30\u201360 minutes.</p>' +
       list.map(function (c) {
         var url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.q) +
@@ -79,18 +91,21 @@
           ' \u00b7 ' + Math.max(1, Math.round(c.d * 20)) + ' min walk' +
           (c.hours ? ' \u00b7 ' + c.hours : '') + '</span></a>';
       }).join('') +
-      '<p class="lead out" style="margin:12px 0 0">Skip while it rains: Colonial Quarter, ' +
-      'the fort courtyard, the playground and the pirate ship are all open-air.</p></div>';
-    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      '<p class="lead out" style="margin:12px 0 0">Open-air, skip while wet: Colonial Quarter, ' +
+      'the fort courtyard, the playground, the pirate ship.</p>' +
+      '<button class="raincls" id="rain-close">Close</button></div>';
+    document.getElementById('rain-close').onclick = close;
   }
 
-  function ask() {
+  function toggle() {
+    if (open) { close(); return; }
+    open = true; label();
     var box = document.getElementById('rainbox');
     box.innerHTML = '<div class="rainbox"><p class="lead">Finding you\u2026</p></div>';
     if (!navigator.geolocation) { show({ lat: 29.8955, lng: -81.3135 }); return; }
     navigator.geolocation.getCurrentPosition(
-      function (p) { show({ lat: p.coords.latitude, lng: p.coords.longitude }); },
-      function () { show({ lat: 29.8955, lng: -81.3135 }); },
+      function (p) { if (open) show({ lat: p.coords.latitude, lng: p.coords.longitude }); },
+      function () { if (open) show({ lat: 29.8955, lng: -81.3135 }); },
       { enableHighAccuracy: true, timeout: 8000, maximumAge: 120000 });
   }
 
@@ -100,12 +115,12 @@
     var b = document.createElement('button');
     b.className = 'rainbtn';
     b.id = 'rain-btn';
-    b.textContent = '\u2614 It is raining \u2014 where now?';
     geo.parentNode.insertBefore(b, geo.nextSibling);
     var box = document.createElement('div');
     box.id = 'rainbox';
     b.parentNode.insertBefore(box, b.nextSibling);
-    b.onclick = ask;
+    b.onclick = toggle;
+    label();
 
     if (window.TRIP) {
       fetch('https://api.open-meteo.com/v1/forecast?latitude=' + window.TRIP.lat +
@@ -113,8 +128,7 @@
         .then(function (r) { return r.json(); })
         .then(function (j) {
           if (j.current && j.current.precipitation > 0) {
-            b.classList.add('hot');
-            b.textContent = '\u2614 It is raining right now \u2014 tap for cover';
+            b.dataset.wet = '1'; b.classList.add('hot'); label();
           }
         }).catch(function () {});
     }

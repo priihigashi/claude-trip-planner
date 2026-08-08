@@ -9,9 +9,11 @@
   text-transform:uppercase;color:#6AA7E8;margin:0 0 5px;font-weight:500}
 .rainbox .lead{font-size:13px;color:var(--muted);margin:0 0 12px}
 .rainbox a{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);padding:12px 0 11px}
-.rainbox a:last-child{padding-bottom:0}
 .rainbox .rn{font-family:"Fraunces",Georgia,serif;font-size:18px;font-weight:600;margin:0 0 3px}
 .rainbox .rw{font-size:13.5px;color:var(--muted);margin:0}
 .rainbox .rm{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#6AA7E8;
   letter-spacing:.06em;margin-top:5px;display:block}
 .rainbox .out{color:#C08A3E}
+.raincls{width:100%;margin-top:14px;cursor:pointer;background:transparent;border:1px solid var(--line);
+  color:var(--muted);border-radius:2px;padding:10px;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;letter-spacing:.12em;text-transform:uppercase}
