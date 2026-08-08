@@ -10,3 +10,8 @@
 .trolhead h3{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
   text-transform:uppercase;color:#D4622A;margin:0 0 7px;font-weight:500}
 .trolhead p{margin:0;font-size:13.5px;color:var(--muted)}
+.trolswitch{display:flex;gap:7px;margin-top:12px}
+.trolswitch button{flex:1;cursor:pointer;background:transparent;border:1px solid rgba(212,98,42,.45);
+  color:#D4622A;border-radius:20px;padding:8px 6px;font-family:"IBM Plex Mono",monospace;
+  font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.trolswitch button[aria-pressed="true"]{background:#D4622A;color:#150802;font-weight:500}
