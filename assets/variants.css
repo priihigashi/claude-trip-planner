@@ -1,0 +1,7 @@
+/* Day variant switch. */
+.variants{display:flex;gap:7px;margin:0 0 10px}
+.variants button{flex:1;cursor:pointer;background:transparent;border:1px solid var(--line);
+  color:var(--muted);border-radius:20px;padding:8px 8px;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;letter-spacing:.08em;text-transform:uppercase}
+.variants button[aria-pressed="true"]{background:var(--shell);border-color:var(--shell);
+  color:var(--ink);font-weight:500}
