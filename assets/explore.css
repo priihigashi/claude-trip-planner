@@ -1,0 +1,18 @@
+/* Explore All view. */
+.day-btn.explore-tab[aria-selected="true"]{background:#7A8A99;border-color:#7A8A99;color:#0E1F2E}
+.pin.exp{display:flex;align-items:center;justify-content:center;width:22px;height:22px;
+  border-radius:50%;background:#4A6072;color:#F2EDE3;border:1.5px solid #0B1926;font-size:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,.4)}
+.stop.exps .knot{background:#4A6072;border-color:#4A6072;color:#F2EDE3;font-size:8px}
+.stop.exps .name{font-size:18px}
+.exphead{border:1px solid var(--line);border-radius:3px;padding:14px 15px;margin:0 0 4px;
+  background:rgba(122,138,153,.08)}
+.exphead h3{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--shell-2);margin:0 0 7px;font-weight:500}
+.exphead p{margin:0;font-size:13.5px;color:var(--muted)}
+.expcats{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.expcats button{cursor:pointer;background:transparent;border:1px solid var(--line);color:var(--muted);
+  border-radius:20px;padding:6px 11px;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.06em;text-transform:uppercase}
+.expcats button[aria-pressed="true"]{background:var(--shell);border-color:var(--shell);
+  color:var(--ink);font-weight:500}
